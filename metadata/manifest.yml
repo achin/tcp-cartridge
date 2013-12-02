@@ -8,6 +8,7 @@ License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Cartridge-Version: "0.1"
 Cartridge-Vendor: 42six
 Categories:
+  - embedded
   - plugin
 Website: https://github.com/achin/tcp-cartridge
 Help-Topics:
@@ -61,8 +62,8 @@ Scaling:
   Max: 1
 Group-Overrides:
   - components:
-    - web_service
     - tcp
+    - web_service
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: PORT
