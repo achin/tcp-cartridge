@@ -3,11 +3,11 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 
 function start() {
     touch "$OPENSHIFT_TCP_DIR/run/running"
-    client_result "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
+    echo "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
 }
 
 function stop() {
-    client_result "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT no longer available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
+    echo "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT no longer available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
     rm "$OPENSHIFT_TCP_DIR/run/running"
 }
 
