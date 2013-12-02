@@ -10,6 +10,7 @@ Cartridge-Vendor: 42six
 Categories:
   - embedded
   - plugin
+  - tcp
 Website: https://github.com/achin/tcp-cartridge
 Help-Topics:
   "Developer Center": https://openshift.redhat.com/community/developers
