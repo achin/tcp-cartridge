@@ -64,7 +64,7 @@ Scaling:
 Group-Overrides:
   - components:
     - tcp
-    - web_service
+    - web_framework
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: PORT
