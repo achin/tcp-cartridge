@@ -1,0 +1,40 @@
+#!/bin/bash -e
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+function start() {
+    touch "$OPENSHIFT_TCP_DIR/run/running"
+    client_result "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
+}
+
+function stop() {
+    client_result "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT no longer available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
+    rm "$OPENSHIFT_TCP_DIR/run/running"
+}
+
+function restart() {
+    stop
+    start
+}
+
+function status() {
+    if [ -f "$OPENSHIFT_TCP_DIR/run/running" ] && return 0
+    return 1
+}
+
+function noop () {
+
+}
+
+case "$1" in
+  start)       start ;;
+  stop)        stop ;;
+  restart)     restart ;;
+  status)      status ;;
+  reload)      noop ;;
+  tidy)        noop ;;
+  prebuild)    noop ;;
+  build)       noop ;;
+  deploy)      noop ;;
+  post-deploy) noop ;;
+  *)           exit 0
+esac
