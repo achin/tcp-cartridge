@@ -1,18 +1,16 @@
 Name: TCP
 Cartridge-Short-Name: TCP
 Cartridge-Version: "0.1"
-Cartridge-Versions: ["0.1"]
 Cartridge-Vendor: 42six
 Display-Name: TCP
 Description: "TCP enables forwarding an arbitrary TCP port to gears"
 Version: "0.1"
-Versions: ["0.1"]
 License: "ASL 2.0"
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Categories:
   - embedded
   - plugin
-Website: http://bitbucket.org/fourtwosix/govfoundry/
+Website: https://github.com/achin/tcp-cartridge
 Help-Topics:
   "Developer Center": https://openshift.redhat.com/community/developers
 Cart-Data:
@@ -58,12 +56,13 @@ Publishes:
 Subscribes:
   set-db-connection-info:
     Type: "ENV:NET_TCP:db:connection-info"
-    Require: false
+    Required: false
 Scaling:
   Min: 1
-  Max: -1
+  Max: 1
 Group-Overrides:
   - components:
+    - web_service
     - service
 Endpoints:
   - Private-IP-Name:   IP
