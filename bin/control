@@ -1,13 +1,13 @@
 #!/bin/bash -e
 
 function start() {
-    touch "$OPENSHIFT_TCP_DIR/run/running"
+    touch "$OPENSHIFT_TCP_DIR/running"
     echo "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
 }
 
 function stop() {
     echo "Internal TCP port $OPENSHIFT_TCP_IP:$OPENSHIFT_TCP_PORT no longer available for proxying by $OPENSHIFT_APP_DNS:$OPENSHIFT_TCP_PROXY_PORT"
-    rm "$OPENSHIFT_TCP_DIR/run/running"
+    rm "$OPENSHIFT_TCP_DIR/running"
 }
 
 function restart() {
