@@ -60,7 +60,7 @@ Subscribes:
     Required: false
 Scaling:
   Min: 1
-  Max: 1
+  Max: -1
 Group-Overrides:
   - components:
     - tcp
