@@ -1,14 +1,13 @@
-Name: TCP
+Name: tcp
 Cartridge-Short-Name: TCP
-Cartridge-Version: "0.1"
-Cartridge-Vendor: 42six
 Display-Name: TCP
 Description: "TCP enables forwarding an arbitrary TCP port to gears"
 Version: "0.1"
 License: "ASL 2.0"
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
+Cartridge-Version: "0.1"
+Cartridge-Vendor: 42six
 Categories:
-  - embedded
   - plugin
 Website: https://github.com/achin/tcp-cartridge
 Help-Topics:
@@ -47,7 +46,7 @@ Cart-Data:
   - Key: OPENSHIFT_GEAR_UUID
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
-Provides
+Provides:
   - tcp-0.1
   - tcp
 Publishes:
@@ -70,4 +69,3 @@ Endpoints:
     Private-Port:      16000
     Public-Port-Name:  PROXY_PORT
     Options:           { "ssl_to_gear": true }
-
