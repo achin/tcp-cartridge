@@ -65,6 +65,7 @@ Group-Overrides:
   - components:
     - tcp
     - web_framework
+    - service
 Endpoints:
   - Private-IP-Name:   IP
     Private-Port-Name: PORT
